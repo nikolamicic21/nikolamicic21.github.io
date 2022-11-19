@@ -1,6 +1,6 @@
 ---
 layout: default
-title: This is me.
+title: Me it is.
 ---
 
-She/her. A software person. Singapore.
+A software person. Belgrade, Serbia.
