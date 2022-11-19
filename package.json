@@ -4,12 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npx @11ty/eleventy --serve & npx tailwindcss -i ./tailwind.css -o _site/assets/styles/tailwind.css --watch",
-    "debug": "DEBUG=Eleventy* npx @11ty/eleventy --serve & npx tailwindcss -i ./tailwind.css -o _site/assets/styles/tailwind.css --watch",
+    "start": "npm run clean & npm run build-tailwind & npx @11ty/eleventy --serve",
+    "debug": "DEBUG=Eleventy* npm run build-tailwind & npx @11ty/eleventy --serve",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "build": "npx @11ty/eleventy & npx tailwindcss -i ./tailwind.css -o _site/assets/styles/tailwind.css"
+    "build": "npm run clean & npm run build-tailwind & npx @11ty/eleventy",
+    "build-tailwind": "npx tailwindcss -i ./tailwind.css -o _site/assets/styles/tailwind.css",
+    "clean": "rimraf _site"
   },
   "keywords": [],
   "author": "",
